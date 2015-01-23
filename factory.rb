@@ -12,7 +12,7 @@ class Factory
 			
 			define_method "[]" do |value|
 				if value.is_a? Fixnum
-					raise ArgumentError unless value < args.length
+					raise NoMethodError unless value < args.length
 					instance_variable_get("@#{args[value]}")
 				else
 					raise NoMethodError unless args.include? value
@@ -20,7 +20,7 @@ class Factory
 				end
 			end
 
-			module_eval &block if block_given?
+			class_eval &block if block_given?
 		end
 	end
 end

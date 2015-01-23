@@ -1,6 +1,6 @@
 # Factory
 
-## Usage:
+## Usage example
 
 ```ruby
 require 'factory'
